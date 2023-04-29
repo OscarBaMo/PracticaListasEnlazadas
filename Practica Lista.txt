@@ -1,0 +1,47 @@
+﻿import java.util.*;
+
+
+class EntradaCorreo {
+String nombre;
+String numero;
+EntradaCorreo(String n, String num) {
+nombre = n;
+numero = num;
+}
+}
+
+
+class DemoItr {
+public static void main(String args[ ]) {
+LinkedList<EntradaCorreo> agenda =
+new LinkedList<EntradaCorreo>( );
+agenda.add(new EntradaCorreo("Charles", "Charles_Vrgz@gmail.com"));
+agenda.add(new EntradaCorreo("Oscar", "oscar13rvlvr99@gmail.com"));
+agenda.add(new EntradaCorreo("Laura", "Laura.Domiguez123@gmail.com"));
+
+
+
+
+Iterator<EntradaCorreo> itr = agenda.iterator( );
+EntradaCorreo et;
+System.out.println("Itera en la lista en " +
+"direcci\u00a2n hacia delante:");
+while(itr.hasNext( )) {
+et = itr.next( );
+System.out.println(et.nombre + ": " + et.numero);
+}
+System.out.println( );
+
+
+
+
+ListIterator<EntradaCorreo> litr =
+agenda.listIterator(agenda.size( ));
+System.out.println("Itera en la lista en " +
+"direcci\u00a2n inversa:");
+while(litr.hasPrevious( )) {
+et = litr.previous( );
+System.out.println(et.nombre + ": " + et.numero);
+}
+}
+}
